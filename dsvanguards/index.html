@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS-Vanguards | Hub</title>
+  <link rel="icon" type="image/png" href="dsvgicon2.png">
+
+  <style>
+    :root {
+      --primary-blue: #0077be;
+      --dark-blue: #001a33;
+      --glow-blue: #00d4ff;
+      --text-silver: #e0e0e0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: radial-gradient(circle at top, #001f3f, #050505);
+      color: var(--text-silver);
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      font-size: 32px;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--glow-blue);
+      letter-spacing: 4px;
+      border-bottom: 2px solid var(--primary-blue);
+      text-shadow: 0 0 15px var(--primary-blue);
+      animation: fadeIn 1.5s;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #0a0a0a;
+      box-shadow: 0 4px 15px rgba(0, 119, 190, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: var(--primary-blue);
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: 0.4s;
+    }
+
+    nav button:hover {
+      background: var(--primary-blue);
+      color: white;
+      box-shadow: 0 0 20px var(--glow-blue);
+    }
+
+    .container {
+      display: none;
+      max-width: 1200px;
+      margin: 30px auto;
+      gap: 25px;
+      padding: 0 20px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .active { display: flex; }
+
+    main {
+      flex: 3;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 25px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      backdrop-filter: blur(5px);
+    }
+
+    aside {
+      flex: 1;
+      background: rgba(0, 26, 51, 0.8);
+      border: 2px solid var(--primary-blue);
+      padding: 20px;
+      border-radius: 15px;
+      height: fit-content;
+      box-shadow: 0 0 15px rgba(0, 119, 190, 0.2);
+    }
+
+    .infobox-title {
+      background: var(--primary-blue);
+      color: white;
+      text-align: center;
+      padding: 8px;
+      font-weight: bold;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .infobox-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #1a3a5a;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    h2 {
+      color: var(--glow-blue);
+      border-bottom: 1px solid var(--primary-blue);
+      padding-bottom: 10px;
+    }
+
+    .link-card {
+      display: block;
+      background: rgba(0, 119, 190, 0.1);
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 8px;
+      color: var(--glow-blue);
+      text-decoration: none;
+      border-left: 4px solid var(--primary-blue);
+      transition: 0.3s;
+    }
+
+    .link-card:hover {
+      background: rgba(0, 119, 190, 0.2);
+      transform: translateX(10px);
+      box-shadow: 0 0 10px var(--primary-blue);
+    }
+
+    .member-box {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px dashed var(--primary-blue);
+      border-radius: 10px;
+    }
+
+    a.internal-link {
+      color: var(--glow-blue);
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #555;
+      font-size: 12px;
+    }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+<header>
+  🌌 DS-VANGUARDS
+</header>
+
+<nav>
+  <button onclick="showTab('inicio')">Início</button>
+  <button onclick="showTab('projetos')">Nossos Sites</button>
+  <button onclick="showTab('membros')">A Vanguarda</button>
+</nav>
+
+<div id="inicio" class="container active">
+  <main>
+    <h2>Bem-vindo à Central DS-Vanguards</h2>
+    <p>A <strong>DS-Vanguards</strong> é um coletivo de desenvolvedores focado em criar experiências imersivas através da web. Se aventurando em universos diversificados como jogos, filmes e livros. Se aventurando nas dificuldades da codificação, adicionando funções diversas em cada projeto feito e adicionando novos designs em cada site. Não se unificando apenas em temas especificos mas também podendo trabalhar em sites totalmente ûteis.</p>
+    <p>Explore nossas abas para conhecer nossos <a class="internal-link" onclick="showTab('projetos')">projetos anteriores</a> e a equipe por trás dos códigos.</p>
+    <div style="text-align: center; margin-top: 30px;">
+        <img src="dsvgicon.png" style="width: 100%; border-radius: 10px; box-shadow: 0 0 20px var(--primary-blue);">
+    </div>
+  </main>
+  
+  <aside>
+    <div class="infobox-title">Dados da Organização</div>
+    <div class="infobox-row"><span>Status:</span> <span style="color: lime;">Ativa</span></div>
+    <div class="infobox-row"><span>Especialidade:</span> <span>Web Design Imersivo</span></div>
+    <div class="infobox-row"><span>Alinhamento:</span> <span>Wiki e Estética</span></div>
+    <div class="infobox-row"><span>Membros:</span> <span>Equipe Vanguards</span></div>
+  </aside>
+</div>
+
+<div id="projetos" class="container">
+  <main>
+    <h2>Repositório de Troféus (Sites)</h2>
+    <p>Abaixo estão os portais criados pela nossa equipe até o momento:</p>
+
+    <a href="https://site-host-hp.vercel.app/" class="link-card">
+      <strong>🧙‍♂️ Mundo de Harry Potter</strong><br>
+      <small>Escola de Magia e Bruxaria com sistema de casas e principais mágias.</small>
+    </a>
+
+    <a href="https://site-host-tf.vercel.app/" class="link-card">
+      <strong>📖 Wiki Team Fortress 2</strong><br>
+      <small>Lores, classes especiais e história dos personagens.</small>
+    </a>
+
+    <a href="https://site-host-op.vercel.app/" class="link-card">
+      <strong>📖 Wiki Ordem Paranormal</strong><br>
+      <small>História, fundador, participantes, personagens e tudo que você menos quer de spoilers. </small>
+      <h4><small>Ultimo projeto.</small></h4>
+    </a>
+
+    <p>Novos projetos estão sendo forjados...</p>
+  </main>
+</div>
+
+<div id="membros" class="container">
+  <main>
+    <h2>Quem Somos</h2>
+    <div class="member-box">
+      <h3 style="color: var(--glow-blue);">Developer</h3>
+      <h5>Christopher Russi</h5>
+      <p>O principal coder da <strong>Vanguards</strong>, especialista na codificação e estruturação dos sites.</p>
+    </div>
+    
+    <div class="member-box">
+      <h3 style="color: var(--glow-blue);">Co Developer</h3>
+      <h5>Matheus Benedito</h5>
+      <p>Coder auxiliar da <strong>Vanguards</strong>, auxiliando nas codificações especiais.</p>
+    </div>
+
+    <div class="member-box">
+      <h3 style="color: var(--glow-blue);">Creative Designer</h3>
+      <h5>Yara Fuentes</h5>
+      <p>A mentora do design criativo do site, pensando em ideias de adições e modificações.</p>
+    </div>
+
+    <div class="member-box">
+      <h3 style="color: var(--glow-blue);">Creative Designer-Assistant</h3>
+      <h5>Pedro Henrique</h5>
+      <p>O principal auxiliar do design criativo, pensando lado a lado trazendo ideias inovadoras.</p>
+    </div>
+
+    <div class="member-box">
+      <h3 style="color: var(--glow-blue);">Theme Designer</h3>
+      <h5>Karolliny Oliveira</h5>
+      <p>A peça principal do quebra cabeça, escolhendo o tema principal que represente o objetivo principal do site.</p>
+    </div>
+  </main>
+</div>
+
+<footer style="text-align: center; padding: 20px; background-color: #1a1a1a; color: #7c7c7c; font-family: serif; font-style: italic;">
+    <p style="margin: 0; font-size: 14px;">
+        DS-Vanguards &copy; 2026. Todos os direitos reservados.
+    </p>
+</footer>
+
+<script>
+  function showTab(tabId) {
+    const containers = document.querySelectorAll('.container');
+    containers.forEach(c => c.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
